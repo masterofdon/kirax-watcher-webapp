@@ -1,0 +1,13 @@
+.widget-container{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.widget-container > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-1{
+    flex : 1;
+}

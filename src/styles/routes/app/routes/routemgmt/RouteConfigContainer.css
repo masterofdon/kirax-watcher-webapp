@@ -1,0 +1,7 @@
+.ant-btn.green-button.ant-btn-primary{
+    background-color: #009f08;
+}
+
+.ant-btn.green-button-disabled.ant-btn-primary{
+    background-color: #a5dda8;
+}

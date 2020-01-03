@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "Antalya Bahçeşehir Koleji",
+        "lat" : 36.852998,
+        "lng" : 30.769366
+    },
+    {
+        "name" : "Antalya Final Okullari",
+        "lat" : 36.905332, 
+        "lng" : 30.756907
+    },
+    {
+        "name" : "Antalya Istek Koleji",
+        "lat" : 36.886891, 
+        "lng" : 30.745480
+    },
+    {
+        "name" : "Antalya TED Koleji",
+        "lat" : 36.913633, 
+        "lng" : 30.778914
+    },
+    {
+        "name" : "Antalya Doga Koleji",
+        "lat" : 36.860778, 
+        "lng" : 30.791585
+    }
+]

@@ -1,0 +1,16 @@
+.ant-menu-dark .ant-menu.ant-menu-sub.ant-menu-inline{
+    background: #000000
+}
+
+.ant-menu-dark .ant-menu.ant-menu-sub.ant-menu-vertical{
+    background: #000000
+}
+.ant-layout-sider-has-trigger .ant-layout-sider-trigger{
+    background: #edc117
+}
+
+.ant-layout-sider-has-trigger .ant-layout-sider-trigger i{
+    font-weight: 900;
+    font-size: 18px;
+    color : #000000
+}

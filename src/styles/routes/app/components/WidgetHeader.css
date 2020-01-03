@@ -1,0 +1,16 @@
+.widget-header-text-item{
+    display: flex;
+    flex-flow: column;
+    color : 'white';
+}
+.widget-header-text{
+    font-size : 18px;
+    font-weight: 600;
+    color : 'white';
+}
+
+.widget-header-subtext{
+    font-size : 14px;
+    font-weight: 400;
+    color : 'white';
+}

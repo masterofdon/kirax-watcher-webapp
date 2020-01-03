@@ -1,0 +1,11 @@
+@keyframes expanded-player {
+    from {height : 0px}
+    to { height: 300px;}
+}
+
+.expanded-player {
+    animation-name: expanded-player;
+    animation-duration: 4s;
+    animation-delay: 300;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}

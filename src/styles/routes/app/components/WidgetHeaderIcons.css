@@ -1,0 +1,14 @@
+.widget-header-icon{
+    background-repeat: no-repeat;    
+}
+.widget-header-icon-lg{
+    width : 24px;
+    height: 24px;
+}
+.widget-header-icon-sm{
+    width : 16px;
+    height: 16px;
+}
+.widget-header-icon-cloud{
+    background-image: url('../../../../asset/images/icons/cloud_x64.svg');
+}
