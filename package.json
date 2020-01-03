@@ -28,7 +28,7 @@
     "history": "^4.7.2",
     "immutability-helper": "^2.7.0",
     "jest": "^22.4.2",
-    "lodash": "4.17.4",
+    "lodash": "4.17.13",
     "markdown": "0.5.0",
     "material-ui": "^0.20.0",
     "morris.js": "0.5.0",
