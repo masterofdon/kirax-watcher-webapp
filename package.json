@@ -1,7 +1,7 @@
 {
-  "name": "project-servistesin-agency-app",
+  "name": "kirax-watcher-app",
   "version": "1.0.0",
-  "description": "Agency Admin App",
+  "description": "Kirax Watcher App",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf public/dist/*",
@@ -12,6 +12,7 @@
     "reinstall": "rimraf node_modules && npm install",
     "serve:dev": "webpack-dev-server --open --progress --env dev",
     "serve:dist": "webpack-dev-server --open --env dist -p --progress",
+    "heroku-prebuild": "npm install --dev",
     "test": "jest --verbose --colors",
     "start": "npm run serve:dev"
   },
