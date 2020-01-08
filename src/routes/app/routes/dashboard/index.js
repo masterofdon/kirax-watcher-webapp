@@ -12,6 +12,9 @@ const { RangePicker } = DatePicker;
 
 const dateFormat = 'DD/MM/YYYY';
 
+import locale from 'antd/es/date-picker/locale/tr_TR';
+
+import 'styles/routes/app/routes/ops/TableHigh.css';
 
 class index extends Component {
     constructor(props) {
@@ -155,21 +158,42 @@ class index extends Component {
                     );
                 }
             }, {
+                title: 'PLAKA',
+                dataIndex: 'licenseplate',
+                width: '7.5%',
+                render: (value, item) => {
+                    if (value == undefined) {
+                        return;
+                    }
+                    return (
+                        <Tag
+                            style={styles.tagStyle}
+                            color="geekblue">
+                            {value}
+                        </Tag>
+                    );
+                }
+            }, {
+                title: 'ARAÇ',
+                dataIndex: 'seats',
+                width: '7.5%',
+                render: (value, item) => {
+                    if (value == undefined) {
+                        return;
+                    }
+                    return (
+                        <Tag
+                            style={styles.tagStyle}
+                            color="geekblue">
+                            {value}
+                        </Tag>
+                    );
+                }
+            },{
                 title: 'BAŞLANGIÇ',
                 dataIndex: 'starttime',
                 width: '7.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <TimePicker
-                                onChange={(e) => {
-                                    item.starttime = e.valueOf();
-                                }}
-                                size={"large"}
-                                format={'HH:mm:ss'}
-                            />
-                        );
-                    }
                     if (value == undefined) {
                         return;
                     }
@@ -187,17 +211,6 @@ class index extends Component {
                 dataIndex: 'endtime',
                 width: '7.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <TimePicker
-                                onChange={(e) => {
-                                    item.endtime = e.valueOf();
-                                }}
-                                size={"large"}
-                                format={'HH:mm:ss'}
-                            />
-                        );
-                    }
                     if (value == undefined) {
                         return;
                     }
@@ -211,22 +224,26 @@ class index extends Component {
                     );
                 }
             }, {
+                title: 'GÜN SAYISI',
+                dataIndex: 'days',
+                width: '7.5%',
+                render: (value, item) => {
+                    if (value == undefined) {
+                        return;
+                    }
+                    return (
+                        <Tag
+                            style={styles.tagStyle}
+                            color="geekblue">
+                            {value}
+                        </Tag>
+                    );
+                }
+            } , {
                 title: 'BAŞ. KM',
                 dataIndex: 'startkm',
                 width: '7.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <Input
-                                onChange={(e) => {
-                                    item.startkm = e.target.value;
-                                    this.setState({})
-                                }}
-                                value={item.startkm}
-                                size={"large"}
-                            />
-                        );
-                    }
                     return (
                         <Tag
                             style={styles.tagStyle}
@@ -240,18 +257,6 @@ class index extends Component {
                 dataIndex: 'endkm',
                 width: '7.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <Input
-                                onChange={(e) => {
-                                    item.endkm = e.target.value;
-                                    this.setState({})
-                                }}
-                                value={item.endkm}
-                                size={"large"}
-                            />
-                        );
-                    }
                     if (value == undefined) {
                         return;
                     }
@@ -268,18 +273,6 @@ class index extends Component {
                 dataIndex: 'drivername',
                 width: '12.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <Input
-                                onChange={(e) => {
-                                    item.drivername = e.target.value;
-                                    this.setState({})
-                                }}
-                                value={item.drivername}
-                                size={"large"}
-                            />
-                        );
-                    }
                     if (value == undefined) {
                         return;
                     }
@@ -291,23 +284,11 @@ class index extends Component {
                         </Tag>
                     );
                 }
-            }, {
-                title: 'YAKIT TUTAR',
-                dataIndex: 'fuelamount',
-                width: '10%',
+            },{
+                title: 'ŞEHİR',
+                dataIndex: 'inquiror',
+                width: '7.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <Input
-                                onChange={(e) => {
-                                    item.fuelamount = e.target.value;
-                                    this.setState({})
-                                }}
-                                value={item.fuelamount}
-                                size={"large"}
-                            />
-                        );
-                    }
                     if (value == undefined) {
                         return;
                     }
@@ -315,54 +296,15 @@ class index extends Component {
                         <Tag
                             style={styles.tagStyle}
                             color="geekblue">
-                            {value + " TL"}
+                            {value.city}
                         </Tag>
                     );
                 }
             }, {
-                title: 'YAKIT LITRE',
-                dataIndex: 'fuellitre',
-                width: '10%',
+                title: 'NOT',
+                dataIndex: 'note',
+                width: '7.5%',
                 render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <Input
-                                onChange={(e) => {
-                                    item.fuellitre = e.target.value;
-                                    this.setState({})
-                                }}
-                                value={item.fuellitre}
-                                size={"large"}
-                            />
-                        );
-                    }
-                    if (value == undefined) {
-                        return;
-                    }
-                    return (
-                        <Tag
-                            style={styles.tagStyle}
-                            color="geekblue">
-                            {value + " Lt."}
-                        </Tag>
-                    );
-                }
-            }, {
-                title: 'MESAİ BAŞ.',
-                dataIndex: 'extrahourfrom',
-                width: '10%',
-                render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <TimePicker
-                                onChange={(e) => {
-                                    item.extrahourfrom = e.valueOf();
-                                }}
-                                size={"large"}
-                                format={'HH:mm:ss'}
-                            />
-                        );
-                    }
                     if (value == undefined) {
                         return;
                     }
@@ -374,37 +316,10 @@ class index extends Component {
                         </Tag>
                     );
                 }
-            }, {
-                title: 'MESAİ BİT.',
-                dataIndex: 'extrahourto',
-                width: '10%',
-                render: (value, item) => {
-                    if (item.index != undefined) {
-                        return (
-                            <TimePicker
-                                onChange={(e) => {
-                                    item.extrahourto = e.valueOf();
-                                }}
-                                size={"large"}
-                                format={'HH:mm:ss'}
-                            />
-                        );
-                    }
-                    if (value == undefined) {
-                        return;
-                    }
-                    return (
-                        <Tag
-                            style={styles.tagStyle}
-                            color="geekblue">
-                            {value}
-                        </Tag>
-                    );
-                }
-            }, {
+            },{
                 title: 'AKSİYON',
                 dataIndex: '',
-                width: '10%',
+                width: '15%',
                 render: (value, item) => {
                     const menu = (
                         <Menu onClick={(e) => {
@@ -438,13 +353,6 @@ class index extends Component {
                 }
             }
         ];
-        const rentablesMap = (this.state.rentablesdata || []).map((e) => {
-            return (
-                <Select.Option key={e.id} value={e.id}>
-                    {e.vehicle.brand + " - " + e.vehicle.model + " , " + e.vehicle.year}
-                </Select.Option>
-            )
-        });
         return (
             <div>
                 <Row>
@@ -590,14 +498,38 @@ class index extends Component {
                                                 </Tag>
                                             </Col>
                                             <Col span={12}>
+                                                <DatePicker
+                                                    onChange={(e) => {
+                                                        this.state.bookingToBeAdded.entrydate = e.valueOf();
+                                                        this.setState({});
+                                                    }}
+                                                    size={"large"}
+                                                    format={'YYYY-MM-DD'}
+                                                    style={{ width: '300px' }}
+                                                    locale={locale}
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row style={styles.newItemRowStyle}>
+                                            <Col span={12}>
                                                 <Tag
+                                                    style={styles.newItemTagStyle}
+                                                    color="gray">
+                                                    PLAKA :
+                                                </Tag>
+                                            </Col>
+                                            <Col span={12}>
+                                                <Input
+                                                    onChange={(e) => {
+                                                        this.state.bookingToBeAdded.licenseplate = e.target.value;
+                                                        this.setState({});
+                                                    }}
+                                                    value={this.state.bookingToBeAdded.licenseplate}
+                                                    size={"large"}
                                                     style={{
-                                                        ...styles.newItemTagStyle,
                                                         width: '300px'
                                                     }}
-                                                    color="geekblue">
-                                                    {moment(Date.now()).format("YYYY-MM-DD")}
-                                                </Tag>
+                                                />
                                             </Col>
                                         </Row>
                                         <Row style={styles.newItemRowStyle}>
@@ -609,18 +541,17 @@ class index extends Component {
                                                 </Tag>
                                             </Col>
                                             <Col span={12}>
-                                                <Select
+                                                <Input
+                                                    onChange={(e) => {
+                                                        this.state.bookingToBeAdded.seats = e.target.value;
+                                                        this.setState({});
+                                                    }}
+                                                    value={this.state.bookingToBeAdded.seats}
+                                                    size={"large"}
                                                     style={{
                                                         width: '300px'
                                                     }}
-                                                    onSelect={(e) => {
-                                                        this.state.bookingToBeAdded.vehicle = {
-                                                            id: e
-                                                        }
-                                                        this.setState({})
-                                                    }}>
-                                                    {rentablesMap}
-                                                </Select>
+                                                />
                                             </Col>
                                         </Row>
                                         <Row style={styles.newItemRowStyle}>
@@ -642,6 +573,7 @@ class index extends Component {
                                                     style={{
                                                         width: '300px'
                                                     }}
+                                                    locale={locale}
                                                 />
                                             </Col>
                                         </Row>
@@ -664,6 +596,7 @@ class index extends Component {
                                                     style={{
                                                         width: '300px'
                                                     }}
+                                                    locale={locale}
                                                 />
                                             </Col>
                                         </Row>
@@ -785,17 +718,17 @@ class index extends Component {
                                                 <Tag
                                                     style={styles.newItemTagStyle}
                                                     color="gray">
-                                                    MESAİ BAŞLANGIÇ :
+                                                    GÜN SAYISI :
                                                 </Tag>
                                             </Col>
                                             <Col span={12}>
-                                                <TimePicker
+                                                <Input
                                                     onChange={(e) => {
-                                                        this.state.bookingToBeAdded.extrahourfrom = e.valueOf();
+                                                        this.state.bookingToBeAdded.days = e.target.value;
                                                         this.setState({})
                                                     }}
+                                                    value={this.state.bookingToBeAdded.days}
                                                     size={"large"}
-                                                    format={'HH:mm:ss'}
                                                     style={{
                                                         width: '300px'
                                                     }}
@@ -807,17 +740,17 @@ class index extends Component {
                                                 <Tag
                                                     style={styles.newItemTagStyle}
                                                     color="gray">
-                                                    MESAİ BİTİŞ :
+                                                    NOT :
                                                 </Tag>
                                             </Col>
                                             <Col span={12}>
-                                                <TimePicker
+                                                <Input
                                                     onChange={(e) => {
-                                                        this.state.bookingToBeAdded.extrahourto = e.valueOf();
+                                                        this.state.bookingToBeAdded.note = e.target.value;
                                                         this.setState({})
                                                     }}
+                                                    value={this.state.bookingToBeAdded.note}
                                                     size={"large"}
-                                                    format={'HH:mm:ss'}
                                                     style={{
                                                         width: '300px'
                                                     }}
@@ -839,14 +772,14 @@ class index extends Component {
                                                 height: 48,
                                                 fontWeight: '500',
                                                 fontSize: '16px',
-                                                marginBottom : "16px"
+                                                marginBottom: "16px"
                                             }}
                                             onClick={(e) => {
                                                 this.bookingsApiAdapter.createBooking(this.state.bookingToBeAdded)
                                                     .then((res) => {
                                                         this.fetchBookingsData();
                                                         this.setState({
-                                                            bookingToBeAdded : {}
+                                                            bookingToBeAdded: {}
                                                         })
                                                     })
                                                     .catch((err) => {
@@ -867,6 +800,19 @@ class index extends Component {
                                 onChange={this.handleBookingsTableChange}
                                 rowKey={(record) => {
                                     return record.id || record.index;
+                                }}
+                                rowClassName={(record) => {
+                                    console.log(record);
+                                    if(record.exceed > 500){
+                                        return "row-exceed-extreme";
+                                    } 
+                                    if(record.exceed > 300){
+                                        return "row-exceed-high";
+                                    }
+                                    if(record.exceed > 200){
+                                        return "row-exceed-mid";
+                                    }
+                                    return "row-exceed-normal";
                                 }}
                             >
                             </Table>
