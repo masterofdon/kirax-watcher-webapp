@@ -68,7 +68,7 @@
     "redux-thunk": "^2.3.0",
     "reshake": "^1.2.1",
     "scriptjs": "2.5.8",
-    "xlsx": "^0.14.0"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "babel-core": "6.25.0",
